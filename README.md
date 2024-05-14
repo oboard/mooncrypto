@@ -14,6 +14,18 @@ moon install oboard/mooncrypto
 
 ```moonbit
 println(@mooncrypto.md5("Hello, World!"))
+
+
+println(@mooncrypto.core_md5(bytes))
+```
+
+### SHA256
+
+```moonbit
+println(@mooncrypto.sha256("Hello, World!"))
+
+
+println(@mooncrypto.core_sha256(bytes))
 ```
 
 ## Algorithms
@@ -21,4 +33,4 @@ println(@mooncrypto.md5("Hello, World!"))
 - [x] MD5
 - [ ] SHA1
 - [ ] SHA3
-- [ ] SHA256
+- [x] SHA256

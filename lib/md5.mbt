@@ -31,7 +31,7 @@ fn md5_ii(a : Int, b : Int, c : Int, d : Int, x : Int, s : Int, t : Int) -> Int 
   md5_cmn(c.lxor(b.lor(d.lnot())), a, b, x, s, t)
 }
 
-fn core_md5(arr : Array[Int], len : Int) -> Array[Int] {
+pub fn core_md5(arr : Array[Int], len : Int) -> Array[Int] {
   let length = 16
   let x = Array::make(length, 0)
   for i = 0; i < arr.length(); i = i + 1 {
@@ -120,14 +120,17 @@ fn core_md5(arr : Array[Int], len : Int) -> Array[Int] {
   [a, b, c, d]
 }
 
-pub fn hex_md5(s : String) -> String {
-  binl2hex(core_md5(str2binl(s), s.length() * chrsz))
-}
+// pub fn hex_md5(s : String) -> String {
+//   binl2hex(core_md5(str2binl(s), s.length() * chrsz))
+// }
+
+// pub fn md5(bytes : Array[Int]) -> Hash {
+//   { data: core_md5(bytes, bytes.length() * chrsz) }
+// }
 
 pub fn md5(s : String) -> Hash {
-  { data: core_md5(str2binl(s), s.length() * chrsz) }
+  { data: core_md5(str2binl(s), s.length() * chrsz), hash_type: MD5 }
 }
-
 
 pub fn str2binl(str : String) -> Array[Int] {
   let bin = Array::make((str.length() * chrsz).asr(5) + 1, 0)
@@ -180,5 +183,5 @@ test {
 
   // ✅
   // "900150983cd24fb0d6963f7d28e17f72"
-  println(hex_md5("abc"))
+  println(md5("abc"))
 }
