@@ -2,7 +2,7 @@
   "import": [
     {
       "path":"oboard/mooncrypto/lib",
-      "alias": "crypto"
+      "alias": "mooncrypto"
     }
   ]
 }

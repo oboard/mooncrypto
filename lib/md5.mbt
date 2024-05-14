@@ -124,6 +124,11 @@ pub fn hex_md5(s : String) -> String {
   binl2hex(core_md5(str2binl(s), s.length() * chrsz))
 }
 
+pub fn md5(s : String) -> Hash {
+  { data: core_md5(str2binl(s), s.length() * chrsz) }
+}
+
+
 pub fn str2binl(str : String) -> Array[Int] {
   let bin = Array::make((str.length() * chrsz).asr(5) + 1, 0)
   let mask = (1).lsl(chrsz) - 1
@@ -133,16 +138,6 @@ pub fn str2binl(str : String) -> Array[Int] {
     )
   }
   bin
-}
-
-pub fn binl2hex(binarray : Array[Int]) -> String {
-  let hex_tab = "0123456789abcdef"
-  let mut str = ""
-  for i = 0; i < binarray.length() * 4; i = i + 1 {
-    str = str + hex_tab.get(binarray[i.asr(2)].asr(i % 4 * 8 + 4).land(0xF)).to_string() +
-      hex_tab.get(binarray[i.asr(2)].asr(i % 4 * 8).land(0xF)).to_string()
-  }
-  return str
 }
 
 // fn binl2b64(binarray : Bytes) -> String {
