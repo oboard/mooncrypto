@@ -34,3 +34,6 @@ println(@mooncrypto.core_sha256(bytes))
 - [ ] SHA1
 - [ ] SHA3
 - [x] SHA256
+- [ ] RSA
+- [ ] AES
+- [ ] ECC
