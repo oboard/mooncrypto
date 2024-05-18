@@ -9,7 +9,7 @@ fn sha256() -> Unit {
 }
 
 fn sha1() -> Unit {
-  // a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
+  // 0a4d55a8d778e5022fab701977c5d840bbc486d0
   println(@mooncrypto.sha1("Hello World"))
 }
 
