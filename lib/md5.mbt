@@ -4,16 +4,6 @@ fn md5_cmn(q : Int, a : Int, b : Int, x : Int, s : Int, t : Int) -> Int {
   safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b)
 }
 
-fn safe_add(x : Int, y : Int) -> Int {
-  let lsw = x.land(0xffff) + y.land(0xffff)
-  let msw = x.asr(16) + y.asr(16) + lsw.asr(16)
-  msw.lsl(16).lor(lsw.land(0xffff))
-}
-
-fn bit_rol(num : Int, cnt : Int) -> Int {
-  num.lsl(cnt).lor(num.lsr(32 - cnt))
-}
-
 // 4组计算函数
 fn md5_ff(a : Int, b : Int, c : Int, d : Int, x : Int, s : Int, t : Int) -> Int {
   md5_cmn(b.land(c).lor(b.lnot().land(d)), a, b, x, s, t)

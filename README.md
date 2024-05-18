@@ -31,7 +31,7 @@ println(@mooncrypto.core_sha256(bytes))
 ## Algorithms
 
 - [x] MD5
-- [ ] SHA1
+- [x] SHA1
 - [ ] SHA3
 - [x] SHA256
 - [ ] RSA
