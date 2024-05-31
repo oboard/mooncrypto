@@ -1,4 +1,4 @@
-pub fn encodeUTF8(s : String) -> @vec.Vec[Int] {
+pub fn encodeUTF8(s : String) -> Array[Int] {
   let r = []
   let mut c = 0
   let mut x = 0

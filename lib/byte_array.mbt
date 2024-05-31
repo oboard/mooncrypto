@@ -12,7 +12,7 @@ pub fn byteArrayToIntArray(byteArray : Array[Int]) -> Array[Int] {
 pub fn bytes_to_array(bytes : Bytes) -> Array[Int] {
   let array = Array::make(bytes.length(), 0)
   for i = 0; i < bytes.length(); i = i + 1 {
-    array[i] = bytes[i]
+    array[i] = bytes[i].to_int()
   }
   array
 }
