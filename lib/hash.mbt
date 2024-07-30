@@ -3,12 +3,12 @@ pub enum HashType {
   SHA1
   SHA256
   SHA512
-} derive(Show, Debug, Eq)
+} derive(Show, Eq)
 
 pub struct Hash {
   data : Array[Int]
   hash_type : HashType
-} derive(Debug, Eq)
+} derive(Eq)
 
 pub fn hexChar(byte : Int) -> String {
   let hex_tab = "0123456789abcdef"
